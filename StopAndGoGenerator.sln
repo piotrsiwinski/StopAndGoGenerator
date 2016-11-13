@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StopAndGoGenerator", "StopA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generator.Tests", "Generator.Tests\Generator.Tests.csproj", "{CAD778A0-BFBB-4A88-86FD-8D9787B021D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StopAndGoGenerator.UI", "StopAndGoGenerator.UI\StopAndGoGenerator.UI.csproj", "{2BBF4093-29FB-4D07-8BBC-FA64C18DC105}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,18 @@ Global
 		{CAD778A0-BFBB-4A88-86FD-8D9787B021D9}.Release|x64.Build.0 = Release|Any CPU
 		{CAD778A0-BFBB-4A88-86FD-8D9787B021D9}.Release|x86.ActiveCfg = Release|Any CPU
 		{CAD778A0-BFBB-4A88-86FD-8D9787B021D9}.Release|x86.Build.0 = Release|Any CPU
+		{2BBF4093-29FB-4D07-8BBC-FA64C18DC105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BBF4093-29FB-4D07-8BBC-FA64C18DC105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BBF4093-29FB-4D07-8BBC-FA64C18DC105}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2BBF4093-29FB-4D07-8BBC-FA64C18DC105}.Debug|x64.Build.0 = Debug|Any CPU
+		{2BBF4093-29FB-4D07-8BBC-FA64C18DC105}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2BBF4093-29FB-4D07-8BBC-FA64C18DC105}.Debug|x86.Build.0 = Debug|Any CPU
+		{2BBF4093-29FB-4D07-8BBC-FA64C18DC105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BBF4093-29FB-4D07-8BBC-FA64C18DC105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BBF4093-29FB-4D07-8BBC-FA64C18DC105}.Release|x64.ActiveCfg = Release|Any CPU
+		{2BBF4093-29FB-4D07-8BBC-FA64C18DC105}.Release|x64.Build.0 = Release|Any CPU
+		{2BBF4093-29FB-4D07-8BBC-FA64C18DC105}.Release|x86.ActiveCfg = Release|Any CPU
+		{2BBF4093-29FB-4D07-8BBC-FA64C18DC105}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

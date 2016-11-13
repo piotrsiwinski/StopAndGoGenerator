@@ -1,0 +1,17 @@
+﻿<Window x:Class="StopAndGoGenerator.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StopAndGoGenerator.UI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Label x:Name="BitsNumberLabel" Content="Ilosc bitów:" HorizontalAlignment="Left" Margin="37,34,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="BitsNumberTextBox" HorizontalAlignment="Left" Height="23" Margin="37,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="GenerateButton" Content="Generuj losowy ciąg" HorizontalAlignment="Left" Margin="37,93,0,0" VerticalAlignment="Top" Width="120" Click="GenerateButton_Click"/>
+        <ProgressBar x:Name="ProgressBar" HorizontalAlignment="Left" Maximum="100" Height="20" Margin="37,118,0,0" VerticalAlignment="Top" Width="430"/>
+        <TextBox x:Name="OutputTextBox" HorizontalAlignment="Left" Height="156" Margin="37,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="430"/>
+
+    </Grid>
+</Window>

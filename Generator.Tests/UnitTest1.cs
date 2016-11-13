@@ -39,12 +39,22 @@ namespace Generator.Tests
         public void TestMethod3()
         {
             Lfsr lfsr = new Lfsr(new []{4,1});
-            var list = new List<int>();
+            var list = new List<long>();
             for (int i = 0; i < 15; i++)
             {
-                list.Add(lfsr.GetElementFromRegister());
+                list.Add(lfsr.GetRandomValueFromRegister());
             }
             var result = list.OrderBy(x => x).ToList();
         }
+
+        [TestMethod]
+        public void CanGetAllStates()
+        {
+            //Lfsr lfsr = new Lfsr(new[] { 4,1 });
+            Lfsr lfsr = new Lfsr(new[] { 12, 6, 4, 1});
+            var result = lfsr.GetAllPeriodValues().ToList();
+
+        }
+
     }
 }

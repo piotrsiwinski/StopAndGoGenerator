@@ -30,50 +30,27 @@ namespace StopAndGoGenerator
             _shiftRegisterStates = new List<long>(tapSeqence.Length);
         }
 
-        private List<long> CountShiftRegisterStates()
-        {   
-            var outputList = new List<long>();
-            foreach (var t in _tapSequence)
-            {
-               
-                outputList.Add(_shiftRegister >> t-1);
-            }
-            return outputList;
-        }
-        public int GetElementFromRegister()
+        private IEnumerable<long> CountShiftRegisterStates()
         {
-
-            foreach (var t in _tapSequence)
-            {
-                var result = _shiftRegister >> t-1;
-                _shiftRegisterStates.Add(result);
-            }
-            //_shiftRegisterStates.Add(_shiftRegister);
-
-            var shiftRegisterStatesToXor = CountShiftRegisterStates();
-
-            long xorResult = 0;
-            foreach (var t in shiftRegisterStatesToXor)
-            {
-                xorResult ^= t;
-            }
-            _shiftRegister = ((xorResult & 0x00000001) << _tapSequence[0]-1) | _shiftRegister>>1;
-
-            var elementsTest = new List<long>();
-            elementsTest.Add(_shiftRegister);
-
-
-            return (int) _shiftRegister;// & 0x00000001;
+            return _tapSequence.Select(t => _shiftRegister >> t - 1).ToList();
         }
 
-        public IEnumerable<int> Test()
+        public long GetRandomValueFromRegister()
+        {
+            var shiftRegisterStatesToXor = CountShiftRegisterStates();
+            long xorResult = shiftRegisterStatesToXor.Aggregate<long, long>(0, (current, t) => current ^ t);
+            _shiftRegister = ((xorResult & 0x00000001) << _tapSequence[0]-1) | _shiftRegister>>1;
+            return _shiftRegister & 0x00000001;
+        }
+
+        public IEnumerable<long> GetAllPeriodValues()
         {
             var registerLength= _tapSequence[0];
             var result = Math.Pow(2, registerLength);
 
-            for (int i = 0; i < result-1; i++)
+            for (int i = 0; i < 2* result-1; i++)
             {
-                yield return GetElementFromRegister();
+                yield return GetRandomValueFromRegister();
             }
         }
     }
