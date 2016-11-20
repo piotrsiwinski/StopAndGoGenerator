@@ -56,6 +56,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="LfsrLogic\FirstLfsrRegisterHandler.cs" />
+    <Compile Include="Views\DecryptionPage.xaml.cs">
+      <DependentUpon>DecryptionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EncryptionPage.xaml.cs">
+      <DependentUpon>EncryptionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\GeneratorPage.xaml.cs">
       <DependentUpon>GeneratorPage.xaml</DependentUpon>
     </Compile>
@@ -69,6 +75,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\DecryptionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EncryptionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\GeneratorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

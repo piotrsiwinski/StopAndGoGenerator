@@ -39,7 +39,7 @@ namespace StopAndGoGenerator.UI.Views
             _generator.ThirdLfsr = CreateLfsr(ThirdLfsrRegisterStart, ThirdLfsrPolynomial);
         }
 
-        private Lfsr CreateLfsr(TextBox registerStart, TextBox polynomial)
+        private static Lfsr CreateLfsr(TextBox registerStart, TextBox polynomial)
         {
             var tapSeqence = polynomial.Text.Split(' ', ';',':', ',').Select(int.Parse).ToArray();
             return new Lfsr(tapSeqence, int.Parse(registerStart.Text));

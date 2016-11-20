@@ -32,12 +32,12 @@ namespace StopAndGoGenerator.UI.Views
 
         private void Szyfrator_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new GeneratorPage());
+            NavigationService?.Navigate(new EncryptionPage());
         }
 
         private void Deszyfrator_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new GeneratorPage());
+            NavigationService?.Navigate(new DecryptionPage());
         }
     }
 }
