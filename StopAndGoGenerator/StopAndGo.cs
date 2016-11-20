@@ -37,7 +37,7 @@ namespace StopAndGoGenerator
                     stringBuilder.Append(result.ToString());
                 }
             }
-            
+
 
             return stringBuilder.ToString();
         }
