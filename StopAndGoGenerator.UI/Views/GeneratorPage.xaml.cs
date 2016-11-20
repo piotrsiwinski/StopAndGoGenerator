@@ -13,19 +13,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
-namespace StopAndGoGenerator.UI
+namespace StopAndGoGenerator.UI.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for GeneratorPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class GeneratorPage : Page
     {
+
         private double _progress;
         private StopAndGo _generator;
         private Thread _workerThread;
         private Thread _progressThread;
-        public MainWindow()
+        public GeneratorPage()
         {
             InitializeComponent();
             _generator = new StopAndGo();
@@ -45,7 +47,7 @@ namespace StopAndGoGenerator.UI
             {
                 Dispatcher.Invoke(() => ProgressBar.Value = _progress);
             }
-            
+
         }
 
         private void GenerateButton_Click(object sender, RoutedEventArgs e)
@@ -54,7 +56,7 @@ namespace StopAndGoGenerator.UI
             ProgressBar.Value = 0;
 
 
-            var count =  int.Parse(BitsNumberTextBox.Text);
+            var count = int.Parse(BitsNumberTextBox.Text);
             _workerThread = new Thread(() =>
             {
                 var result = _generator.GenerateRandomValues(count, out _progress);
