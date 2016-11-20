@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StopAndGoGenerator;
+using XorEncrypt;
 
 namespace Generator.Tests
 {
@@ -32,7 +33,7 @@ namespace Generator.Tests
                 var res = wyniklfsr.OrderBy(x => x).ToList();
                 wyniklfsrBits[i] += (rejestr & 0x00000001);
             }
-            
+
         }
 
         [TestMethod]
@@ -56,5 +57,12 @@ namespace Generator.Tests
 
         }
 
+        [TestMethod]
+        public void TestXor()
+        {
+            XorEncryption encryption = new XorEncryption();
+            encryption.Encrypt(null, null);
+
+        }
     }
 }

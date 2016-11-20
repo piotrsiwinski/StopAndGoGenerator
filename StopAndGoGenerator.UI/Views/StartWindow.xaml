@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StopAndGoGenerator.UI.Views"
         mc:Ignorable="d"
+        WindowStartupLocation ="CenterScreen"
+        WindowState="Normal"
         Title="StartWindow" Height="1024" Width="768" Source="MainPage.xaml">
 
 </NavigationWindow>

@@ -132,6 +132,10 @@
       <Project>{3203e133-b327-4fd9-bde2-e8d4138e7cdd}</Project>
       <Name>StopAndGoGenerator</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XorEncrypt\XorEncrypt.csproj">
+      <Project>{83C13016-8E62-46C9-ADCE-3E82F3E9F0F5}</Project>
+      <Name>XorEncrypt</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

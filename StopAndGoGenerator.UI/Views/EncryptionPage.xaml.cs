@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Win32;
+using XorEncrypt;
 
 namespace StopAndGoGenerator.UI.Views
 {
@@ -22,9 +23,11 @@ namespace StopAndGoGenerator.UI.Views
     /// </summary>
     public partial class EncryptionPage : Page
     {
+        private XorEncryption _encryption;
         public EncryptionPage()
         {
             InitializeComponent();
+            _encryption = new XorEncryption();
         }
 
         private void ReadFromFileButton_Click(object sender, RoutedEventArgs e)
@@ -41,8 +44,7 @@ namespace StopAndGoGenerator.UI.Views
 
         private void EncryptMessageButton_OnClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Szyfrowanie");
-            EncryptedMessageTextBox.Text = "Tajna wiadomość";
+            EncryptedMessageTextBox.Text = _encryption.Encrypt(KeyTextTextBox.Text, PlainTextTextBox.Text);
         }
 
         private void SaveMessageToFileButton_OnClick(object sender, RoutedEventArgs e)

@@ -58,6 +58,10 @@
       <Project>{3203E133-B327-4FD9-BDE2-E8D4138E7CDD}</Project>
       <Name>StopAndGoGenerator</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XorEncrypt\XorEncrypt.csproj">
+      <Project>{83C13016-8E62-46C9-ADCE-3E82F3E9F0F5}</Project>
+      <Name>XorEncrypt</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
