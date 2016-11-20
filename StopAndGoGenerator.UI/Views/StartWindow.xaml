@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:StopAndGoGenerator.UI.Views"
         mc:Ignorable="d"
         WindowStartupLocation ="CenterScreen"
-        WindowState="Normal"
-        Title="StartWindow" Height="1024" Width="768" Source="MainPage.xaml">
+        WindowState="Maximized"
+        Title="StartWindow" Height="1024" Width="768" Source="MainPage.xaml"
+                  MinHeight="1024" MinWidth="768">
 
 </NavigationWindow>

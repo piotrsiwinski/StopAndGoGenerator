@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -14,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using Microsoft.Win32;
 
 namespace StopAndGoGenerator.UI.Views
 {
@@ -30,6 +32,10 @@ namespace StopAndGoGenerator.UI.Views
         {
             InitializeComponent();
             _generator = new StopAndGo();
+            var source = GetDefaultPolynomials();
+            FirstLfsrPolynomial.ItemsSource = source;
+            SecondLfsrPolynomial.ItemsSource = source;
+            ThirdLfsrPolynomial.ItemsSource = source;
         }
 
         private void InitializeStopAndGo()
@@ -39,9 +45,10 @@ namespace StopAndGoGenerator.UI.Views
             _generator.ThirdLfsr = CreateLfsr(ThirdLfsrRegisterStart, ThirdLfsrPolynomial);
         }
 
-        private static Lfsr CreateLfsr(TextBox registerStart, TextBox polynomial)
+        private static Lfsr CreateLfsr(TextBox registerStart, ComboBox polynomial)
         {
-            var tapSeqence = polynomial.Text.Split(' ', ';',':', ',').Select(int.Parse).ToArray();
+            var text = (string) polynomial.SelectedValue;
+            var tapSeqence = text.Split(' ', ';',':', ',').Select(int.Parse).ToArray();
             return new Lfsr(tapSeqence, int.Parse(registerStart.Text));
         }
         private void GenerateButton_Click(object sender, RoutedEventArgs e)
@@ -66,6 +73,32 @@ namespace StopAndGoGenerator.UI.Views
             {
                 Dispatcher.Invoke(() => ProgressBar.Value = _progress);
             }
+        }
+
+        private void SaveToFileButton_Click(object sender, RoutedEventArgs e)
+        {
+            var saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                using (var stream = new StreamWriter(saveFileDialog.FileName))
+                {
+                    stream.Write(OutputTextBox.Text);
+                }
+            }
+        }
+
+        private List<string> GetDefaultPolynomials()
+        {
+            List<string> result = new List<string>(300);
+            string path = "../../Polynomials/wielomiany.txt";
+            using (var stream = new StreamReader(path))
+            {
+                while (!stream.EndOfStream)
+                {
+                    result.Add(stream.ReadLine());
+                }
+            }
+            return result;
         }
     }
 }

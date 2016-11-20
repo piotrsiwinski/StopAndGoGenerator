@@ -70,5 +70,17 @@ namespace StopAndGoGenerator.UI.Views
                 }
             }
         }
+
+        private void SaveKeyToFileButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                using (var stream = new StreamWriter(saveFileDialog.FileName))
+                {
+                    stream.Write(KeyTextTextBox.Text);
+                }
+            }
+        }
     }
 }
