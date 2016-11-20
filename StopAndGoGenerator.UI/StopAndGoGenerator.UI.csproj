@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LfsrLogic\FirstLfsrRegisterHandler.cs" />
     <Compile Include="Views\GeneratorPage.xaml.cs">
       <DependentUpon>GeneratorPage.xaml</DependentUpon>
     </Compile>
@@ -109,6 +110,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DesignPatterns\DesignPatterns.csproj">
+      <Project>{7117F7C0-A021-4B06-9C3D-135F8B04705A}</Project>
+      <Name>DesignPatterns</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StopAndGoGenerator\StopAndGoGenerator.csproj">
       <Project>{3203e133-b327-4fd9-bde2-e8d4138e7cdd}</Project>
       <Name>StopAndGoGenerator</Name>

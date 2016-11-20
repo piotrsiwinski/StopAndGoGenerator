@@ -17,10 +17,10 @@
         <Grid HorizontalAlignment="Left" Margin="40, 80, 0,0" VerticalAlignment="Top">
             <Label FontSize="16" Content="LFSR 1" HorizontalAlignment="Left" />
             <Label Content="Stan początkowy rejestru: " Margin="0, 20, 0, 0"></Label>
-            <TextBox x:Name="FirstLfsrRegisterStart" HorizontalAlignment="Left" Height="23" Margin="0, 40, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="FirstLfsrRegisterStart" HorizontalAlignment="Left" Height="23" Margin="0, 40, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1"/>
 
             <Label Content="Wielomian pierwotny" Margin="0, 60, 0, 0"></Label>
-            <TextBox x:Name="FirstLfsrPolynomial" HorizontalAlignment="Left" Height="23" Margin="0, 80, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="FirstLfsrPolynomial" HorizontalAlignment="Left" Height="23" Margin="0, 80, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
 
             <Label Content="Stan początkowy rejestru: " Margin="0, 100, 0, 0"></Label>
             <TextBox x:Name="a" HorizontalAlignment="Left" Height="23" Margin="0, 120, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -30,7 +30,7 @@
         <Grid HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top">
             <Label FontSize="16" Content="LFSR 2"  />
             <Label Content="Stan początkowy rejestru: " Margin="0, 20, 0, 0"></Label>
-            <TextBox x:Name="SecondLfsrRegisterStart" HorizontalAlignment="Left" Height="23" Margin="0, 40, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="SecondLfsrRegisterStart" HorizontalAlignment="Left" Height="23" Margin="0, 40, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1"/>
 
             <Label Content="Wielomian pierwotny" Margin="0, 60, 0, 0"></Label>
             <TextBox x:Name="SecondLfsrPolynomial" HorizontalAlignment="Left" Height="23" Margin="0, 80, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -43,7 +43,7 @@
         <Grid HorizontalAlignment="Right" Margin="0,80,0,40" VerticalAlignment="Top">
             <Label FontSize="16" Content="LFSR 3" />
             <Label Content="Stan początkowy rejestru: " Margin="0, 20, 0, 0"></Label>
-            <TextBox x:Name="ThirdLfsrRegisterStart" HorizontalAlignment="Left" Height="23" Margin="0, 40, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="ThirdLfsrRegisterStart" HorizontalAlignment="Left" Height="23" Margin="0, 40, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1"/>
 
             <Label Content="Wielomian pierwotny" Margin="0, 60, 0, 0"></Label>
             <TextBox x:Name="ThirdLfsrPolynomial" HorizontalAlignment="Left" Height="23" Margin="0, 80, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generator.Tests", "Generato
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StopAndGoGenerator.UI", "StopAndGoGenerator.UI\StopAndGoGenerator.UI.csproj", "{2BBF4093-29FB-4D07-8BBC-FA64C18DC105}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{7117F7C0-A021-4B06-9C3D-135F8B04705A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{2BBF4093-29FB-4D07-8BBC-FA64C18DC105}.Release|x64.Build.0 = Release|Any CPU
 		{2BBF4093-29FB-4D07-8BBC-FA64C18DC105}.Release|x86.ActiveCfg = Release|Any CPU
 		{2BBF4093-29FB-4D07-8BBC-FA64C18DC105}.Release|x86.Build.0 = Release|Any CPU
+		{7117F7C0-A021-4B06-9C3D-135F8B04705A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7117F7C0-A021-4B06-9C3D-135F8B04705A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7117F7C0-A021-4B06-9C3D-135F8B04705A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7117F7C0-A021-4B06-9C3D-135F8B04705A}.Debug|x64.Build.0 = Debug|Any CPU
+		{7117F7C0-A021-4B06-9C3D-135F8B04705A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7117F7C0-A021-4B06-9C3D-135F8B04705A}.Debug|x86.Build.0 = Debug|Any CPU
+		{7117F7C0-A021-4B06-9C3D-135F8B04705A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7117F7C0-A021-4B06-9C3D-135F8B04705A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7117F7C0-A021-4B06-9C3D-135F8B04705A}.Release|x64.ActiveCfg = Release|Any CPU
+		{7117F7C0-A021-4B06-9C3D-135F8B04705A}.Release|x64.Build.0 = Release|Any CPU
+		{7117F7C0-A021-4B06-9C3D-135F8B04705A}.Release|x86.ActiveCfg = Release|Any CPU
+		{7117F7C0-A021-4B06-9C3D-135F8B04705A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
