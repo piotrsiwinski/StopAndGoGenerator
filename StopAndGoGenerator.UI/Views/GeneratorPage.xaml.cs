@@ -26,16 +26,17 @@ namespace StopAndGoGenerator.UI.Views
     {
         private double _progress;
         private StopAndGo _generator;
+        private readonly List<string> _defaultPolynomials;
         private Thread _workerThread;
         private Thread _progressThread;
         public GeneratorPage()
         {
             InitializeComponent();
             _generator = new StopAndGo();
-            var source = GetDefaultPolynomials();
-            FirstLfsrPolynomial.ItemsSource = source;
-            SecondLfsrPolynomial.ItemsSource = source;
-            ThirdLfsrPolynomial.ItemsSource = source;
+            _defaultPolynomials = GetDefaultPolynomials();
+            FirstLfsrPolynomial.ItemsSource = _defaultPolynomials;
+            SecondLfsrPolynomial.ItemsSource = _defaultPolynomials;
+            ThirdLfsrPolynomial.ItemsSource = _defaultPolynomials;
         }
 
         private void InitializeStopAndGo()
@@ -99,6 +100,49 @@ namespace StopAndGoGenerator.UI.Views
                 }
             }
             return result;
+        }
+
+        private void SaveConfigurationButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append((string)FirstLfsrPolynomial.SelectedValue + "\n");
+            builder.Append((string)SecondLfsrPolynomial.SelectedValue + "\n");
+            builder.Append((string)ThirdLfsrPolynomial.SelectedValue + "\n");
+            builder.Append(BitsNumberTextBox.Text + "\n");
+
+
+
+            var saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                using (var stream = new StreamWriter(saveFileDialog.FileName))
+                {
+                    stream.Write(builder.ToString());
+                }
+            }
+        }
+
+        private void ReadConfigurationButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var configurationList = new List<string>();
+            var openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                using (var stream = new StreamReader(openFileDialog.FileName))
+                {
+                    while (!stream.EndOfStream)
+                    {
+                        configurationList.Add(stream.ReadLine());
+                    }
+                }
+            }
+            FirstLfsrPolynomial.SelectedItem = _defaultPolynomials.FirstOrDefault(n => n == configurationList[0]);
+            SecondLfsrPolynomial.SelectedItem = _defaultPolynomials.FirstOrDefault(n => n == configurationList[1]);
+            ThirdLfsrPolynomial.SelectedItem = _defaultPolynomials.FirstOrDefault(n => n == configurationList[2]);
+            BitsNumberTextBox.Text = configurationList[3];
+
+
+
         }
     }
 }

@@ -60,6 +60,8 @@
             <ProgressBar x:Name="ProgressBar" HorizontalAlignment="Left" Maximum="100" Height="20" Margin="40,80,0,0" VerticalAlignment="Top" Width="430"/>
             <TextBox x:Name="OutputTextBox" HorizontalAlignment="Left" Height="156" Margin="40,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="430"/>
             <Button x:Name="SaveToFileButton" Content="Zapisz do pliku" HorizontalAlignment="Right" Margin="0,280,10,0" VerticalAlignment="Top" Width="120" Click="SaveToFileButton_Click"/>
+            <Button x:Name="SaveConfigurationButton" Content="Zapisz ustawienia do pliku" HorizontalAlignment="Right" Margin="0,280,135,0" VerticalAlignment="Top" Width="161" Click="SaveConfigurationButton_OnClick"/>
+            <Button x:Name="ReadConfigurationButton" Content="Odczytaj ustawienia" HorizontalAlignment="Right" Margin="0,280,301,0" VerticalAlignment="Top" Width="129" Click="ReadConfigurationButton_OnClick"/>
         </Grid>
 
 
