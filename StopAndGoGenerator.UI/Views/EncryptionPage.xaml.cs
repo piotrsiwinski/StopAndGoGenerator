@@ -44,7 +44,15 @@ namespace StopAndGoGenerator.UI.Views
 
         private void EncryptMessageButton_OnClick(object sender, RoutedEventArgs e)
         {
-            EncryptedMessageTextBox.Text = _encryption.Encrypt(KeyTextTextBox.Text, PlainTextTextBox.Text);
+            if (PlainTextTextBox.Text.Length > KeyTextTextBox.Text.Length)
+            {
+                MessageBox.Show("Klucz jest zbyt krótki - nie można szyfrować");
+            }
+            else
+            {
+                EncryptedMessageTextBox.Text = _encryption.Encrypt(KeyTextTextBox.Text, PlainTextTextBox.Text);
+            }
+            
         }
 
         private void SaveMessageToFileButton_OnClick(object sender, RoutedEventArgs e)

@@ -27,17 +27,17 @@ namespace StopAndGoGenerator.UI.Views
 
         private void GeneratorButton_OnClick(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new GeneratorPage());
+            NavigationService.Navigate(new GeneratorPage());
         }
 
         private void Szyfrator_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new EncryptionPage());
+            NavigationService.Navigate(new EncryptionPage());
         }
 
         private void Deszyfrator_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new DecryptionPage());
+            NavigationService.Navigate(new DecryptionPage());
         }
     }
 }

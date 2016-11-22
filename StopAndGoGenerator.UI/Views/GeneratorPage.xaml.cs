@@ -54,19 +54,28 @@ namespace StopAndGoGenerator.UI.Views
         }
         private void GenerateButton_Click(object sender, RoutedEventArgs e)
         {
-            InitializeStopAndGo();
-            OutputTextBox.Text = "";
-            ProgressBar.Value = 0;
-
-            var count = int.Parse(BitsNumberTextBox.Text);
-            _workerThread = new Thread(() =>
+            try
             {
-                var result = _generator.GenerateRandomValues(count, out _progress);
-                Dispatcher.Invoke(() => OutputTextBox.Text = result);
-            });
-            _workerThread.Start();
-            _progressThread = new Thread(UpdateProgressBar);
-            _progressThread.Start();
+                InitializeStopAndGo();
+                OutputTextBox.Text = "";
+                ProgressBar.Value = 0;
+
+                var count = int.Parse(BitsNumberTextBox.Text);
+                _workerThread = new Thread(() =>
+                {
+                    var result = _generator.GenerateRandomValues(count, out _progress);
+                    Dispatcher.Invoke(() => OutputTextBox.Text = result);
+                });
+                _workerThread.Start();
+                _progressThread = new Thread(UpdateProgressBar);
+                _progressThread.Start();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Proszę uzupełnić wszystkie pola");
+            }
+            
         }
         private void UpdateProgressBar()
         {
@@ -143,6 +152,30 @@ namespace StopAndGoGenerator.UI.Views
 
 
 
+        }
+
+        private void SystemGenerateButton_Click(object sender, RoutedEventArgs e)
+        {
+            var random = new Random();
+            var stringBuilder = new StringBuilder();
+            var count = int.Parse(BitsNumberTextBox.Text);
+            for (int i = 0; i < count; i++)
+            {
+                stringBuilder.Append(random.Next(0, 2));
+            }
+            SystemGeneratorTextBox.Text = stringBuilder.ToString();
+        }
+
+        private void SaveToFileFromRandomButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                using (var stream = new StreamWriter(saveFileDialog.FileName))
+                {
+                    stream.Write(OutputTextBox.Text);
+                }
+            }
         }
     }
 }

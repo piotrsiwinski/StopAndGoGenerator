@@ -8,33 +8,33 @@
       d:DesignHeight="1024" d:DesignWidth="768"
       Title="EncryptionPage"
       Background="White">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
 
-    <Grid>
-        <Label Content="Generator Stop and Go" FontSize="24" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="Szyfrator" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top"/>
-
-
-        <Grid HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Height="1000">
-            <Label Content="Tekst do zaszyfrowania: " HorizontalAlignment="Left" Margin="0,0,0,161"  />
-            <TextBox x:Name="PlainTextTextBox" HorizontalAlignment="Left" Height="156" Margin="0,26,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="430"/>
-            <Button x:Name="GetPlainTextFromFileButton" FontSize="12" Content="Wczytaj z pliku" HorizontalAlignment="Right" Margin="0,187,130,0" VerticalAlignment="Top" Width="111" Click="ReadFromFileButton_Click" Height="42"/>
-            <Button x:Name="EncryptMessageButton" FontSize="12" Content="Zaszyfruj" HorizontalAlignment="Right" Margin="0,187,10,0" VerticalAlignment="Top" Width="111" Click="EncryptMessageButton_OnClick" Height="42"/>
+        <Grid>
+            <Label Content="Generator Stop and Go" FontSize="24" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top"/>
+            <Label Content="Szyfrator" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top"/>
 
 
-            <Label Content="Klucz: " HorizontalAlignment="Left" Margin="0,230,0,161"  />
-            <TextBox x:Name="KeyTextTextBox" HorizontalAlignment="Left" Height="156" Margin="0,256,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="430"/>
-            <Button x:Name="GetKeyTextFromFileButton" FontSize="12" Content="Wczytaj z pliku" HorizontalAlignment="Right" Margin="0,420,130,0" VerticalAlignment="Top" Width="111" Click="GetKeyTextFromFileButton_OnClick" Height="42"/>
-            <Button x:Name="SaveKeyToFileButton" FontSize="12" Content="Zapisz" HorizontalAlignment="Right" Margin="0,420,10,0" VerticalAlignment="Top" Width="111" Click="SaveKeyToFileButton_OnClick" Height="42"/>
-
-            <Label Content="Zaszyfrowana wiadomość: " HorizontalAlignment="Left" Margin="0,470,0,0"  />
-            <TextBox x:Name="EncryptedMessageTextBox" HorizontalAlignment="Left" Height="156" Margin="0,500,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="430"/>
-            <Button x:Name="SaveMessageToFileButton" FontSize="12" Content="Zapisz" HorizontalAlignment="Right" Margin="0,660,10,0" VerticalAlignment="Top" Width="111" Click="SaveMessageToFileButton_OnClick" Height="42"/>
+            <Grid HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Height="1000">
+                <Label Content="Tekst do zaszyfrowania: " HorizontalAlignment="Left" Margin="0,0,0,161"  />
+                <TextBox x:Name="PlainTextTextBox" HorizontalAlignment="Left" Height="156" Margin="0,26,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="430"/>
+                <Button x:Name="GetPlainTextFromFileButton" FontSize="12" Content="Wczytaj z pliku" HorizontalAlignment="Right" Margin="0,187,130,0" VerticalAlignment="Top" Width="111" Click="ReadFromFileButton_Click" Height="42"/>
+                <Button x:Name="EncryptMessageButton" FontSize="12" Content="Zaszyfruj" HorizontalAlignment="Right" Margin="0,187,10,0" VerticalAlignment="Top" Width="111" Click="EncryptMessageButton_OnClick" Height="42"/>
 
 
+                <Label Content="Klucz: " HorizontalAlignment="Left" Margin="0,230,0,161"  />
+                <TextBox x:Name="KeyTextTextBox" HorizontalAlignment="Left" Height="156" Margin="0,256,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="430"/>
+                <Button x:Name="GetKeyTextFromFileButton" FontSize="12" Content="Wczytaj z pliku" HorizontalAlignment="Right" Margin="0,420,130,0" VerticalAlignment="Top" Width="111" Click="GetKeyTextFromFileButton_OnClick" Height="42"/>
+                <Button x:Name="SaveKeyToFileButton" FontSize="12" Content="Zapisz" HorizontalAlignment="Right" Margin="0,420,10,0" VerticalAlignment="Top" Width="111" Click="SaveKeyToFileButton_OnClick" Height="42"/>
+
+                <Label Content="Zaszyfrowana wiadomość: " HorizontalAlignment="Left" Margin="0,470,0,0"  />
+                <TextBox x:Name="EncryptedMessageTextBox" HorizontalAlignment="Left" Height="156" Margin="0,500,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="430"/>
+                <Button x:Name="SaveMessageToFileButton" FontSize="12" Content="Zapisz" HorizontalAlignment="Right" Margin="0,660,10,0" VerticalAlignment="Top" Width="111" Click="SaveMessageToFileButton_OnClick" Height="42"/>
+
+
+
+            </Grid>
 
         </Grid>
-
-    </Grid>
-
-
+    </ScrollViewer>
 </Page>

@@ -8,62 +8,69 @@
       d:DesignHeight="1024" d:DesignWidth="768"
       Background="White"
       Title="GeneratorPage">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
 
-    <Grid>
-        <Label Content="Generator Stop and Go" FontSize="24" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="Ustawienia rejestrów" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top"/>
+        <Grid>
+            <Label Content="Generator Stop and Go" FontSize="24" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top"/>
+            <Label Content="Ustawienia rejestrów" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top"/>
 
-<!--        LFSR1 Grid-->
-        <Grid HorizontalAlignment="Left" Margin="40, 80, 0,0" VerticalAlignment="Top">
-            <Label FontSize="16" Content="LFSR 1" HorizontalAlignment="Left" />
-            <Label Content="Stan początkowy rejestru: " Margin="0, 20, 0, 0"></Label>
-            <TextBox x:Name="FirstLfsrRegisterStart" HorizontalAlignment="Left" Height="23" Margin="0, 40, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1"/>
+            <!--        LFSR1 Grid-->
+            <Grid HorizontalAlignment="Left" Margin="40, 80, 0,0" VerticalAlignment="Top">
+                <Label FontSize="16" Content="LFSR 1" HorizontalAlignment="Left" />
+                <Label Content="Stan początkowy rejestru: " Margin="0, 20, 0, 0"></Label>
+                <TextBox x:Name="FirstLfsrRegisterStart" HorizontalAlignment="Left" Height="23" Margin="0, 40, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1"/>
 
-            <Label Content="Wielomian pierwotny" Margin="0, 60, 0, 0"></Label>
-            <ComboBox x:Name="FirstLfsrPolynomial" HorizontalAlignment="Left" Height="23" Margin="0, 80, 0, 0" VerticalAlignment="Top" Width="120" />
+                <Label Content="Wielomian pierwotny" Margin="0, 60, 0, 0"></Label>
+                <ComboBox x:Name="FirstLfsrPolynomial" HorizontalAlignment="Left" Height="23" Margin="0, 80, 0, 0" VerticalAlignment="Top" Width="120" />
 
-<!--            <Label Content="Stan początkowy rejestru: " Margin="0, 100, 0, 0"></Label>-->
-<!--            <TextBox x:Name="a" HorizontalAlignment="Left" Height="23" Margin="0, 120, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>-->
+                <!--            <Label Content="Stan początkowy rejestru: " Margin="0, 100, 0, 0"></Label>-->
+                <!--            <TextBox x:Name="a" HorizontalAlignment="Left" Height="23" Margin="0, 120, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>-->
+            </Grid>
+
+            <!--        LFSR 2 Grid-->
+            <Grid HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top">
+                <Label FontSize="16" Content="LFSR 2"  />
+                <Label Content="Stan początkowy rejestru: " Margin="0, 20, 0, 0"></Label>
+                <TextBox x:Name="SecondLfsrRegisterStart" HorizontalAlignment="Left" Height="23" Margin="0, 40, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1"/>
+
+                <Label Content="Wielomian pierwotny" Margin="0, 60, 0, 0"></Label>
+                <ComboBox x:Name="SecondLfsrPolynomial" HorizontalAlignment="Left" Height="23" Margin="0, 80, 0, 0" VerticalAlignment="Top" Width="120"/>
+
+                <!--            <Label Content="Stan początkowy rejestru: " Margin="0, 100, 0, 0"></Label>-->
+                <!--            <TextBox x:Name="b" HorizontalAlignment="Left" Height="23" Margin="0, 120, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>-->
+            </Grid>
+
+            <!--        LFSR 3 Grid-->
+            <Grid HorizontalAlignment="Right" Margin="0,80,0,40" VerticalAlignment="Top">
+                <Label FontSize="16" Content="LFSR 3" />
+                <Label Content="Stan początkowy rejestru: " Margin="0, 20, 0, 0"></Label>
+                <TextBox x:Name="ThirdLfsrRegisterStart" HorizontalAlignment="Left" Height="23" Margin="0, 40, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1"/>
+
+                <Label Content="Wielomian pierwotny" Margin="0, 60, 0, 0"></Label>
+                <ComboBox x:Name="ThirdLfsrPolynomial" HorizontalAlignment="Left" Height="23" Margin="0, 80, 0, 0" VerticalAlignment="Top" Width="120"/>
+
+                <!--            <Label Content="Stan początkowy rejestru: " Margin="0, 100, 0, 0"></Label>-->
+                <!--            <TextBox x:Name="c" HorizontalAlignment="Left" Height="23" Margin="0, 120, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>-->
+            </Grid>
+
+            <!--        Generator Grid-->
+            <Grid HorizontalAlignment="Center" Margin="0, 260, 0,0 " VerticalAlignment="Top" Height="1000">
+                <Label x:Name="BitsNumberLabel" Content="Ilosc bitów:" HorizontalAlignment="Left" Margin="40,0,0,0" />
+                <TextBox x:Name="BitsNumberTextBox" HorizontalAlignment="Left" Height="23" Margin="40,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <Button x:Name="GenerateButton" Content="Generuj losowy ciąg" HorizontalAlignment="Left" Margin="40,50,0,0" VerticalAlignment="Top" Width="120" Click="GenerateButton_Click"/>
+                
+                <ProgressBar x:Name="ProgressBar" HorizontalAlignment="Left" Maximum="100" Height="20" Margin="40,80,0,0" VerticalAlignment="Top" Width="430"/>
+                <TextBox x:Name="OutputTextBox" HorizontalAlignment="Left" Height="156" Margin="40,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="430"/>
+                <Button x:Name="SaveToFileButton" Content="Zapisz do pliku" HorizontalAlignment="Right" Margin="0,280,10,0" VerticalAlignment="Top" Width="120" Click="SaveToFileButton_Click"/>
+                <Button x:Name="SaveConfigurationButton" Content="Zapisz ustawienia do pliku" HorizontalAlignment="Right" Margin="0,280,135,0" VerticalAlignment="Top" Width="161" Click="SaveConfigurationButton_OnClick"/>
+                <Button x:Name="ReadConfigurationButton" Content="Odczytaj ustawienia" HorizontalAlignment="Right" Margin="0,280,301,0" VerticalAlignment="Top" Width="129" Click="ReadConfigurationButton_OnClick"/>
+                <Label Content="Losowy ciąg dla random" HorizontalAlignment="Left" Margin="40,320,0,0" />
+                <TextBox x:Name="SystemGeneratorTextBox" HorizontalAlignment="Left" Height="156" Margin="40,351,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="430"/>
+                <Button x:Name="SystemGenerateButton" Content="Generuj z użyciem wbudowanego" HorizontalAlignment="Left" Margin="40,520,0,0" VerticalAlignment="Top" Width="210" Click="SystemGenerateButton_Click" />
+                <Button x:Name="SaveToFileFromRandomButton" Content="Zapisz do pliku" HorizontalAlignment="Right" Margin="0,520,10,0" VerticalAlignment="Top" Width="120" Click="SaveToFileFromRandomButton_OnClick"/>
+            </Grid>
+
+
         </Grid>
-
-<!--        LFSR 2 Grid-->
-        <Grid HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top">
-            <Label FontSize="16" Content="LFSR 2"  />
-            <Label Content="Stan początkowy rejestru: " Margin="0, 20, 0, 0"></Label>
-            <TextBox x:Name="SecondLfsrRegisterStart" HorizontalAlignment="Left" Height="23" Margin="0, 40, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1"/>
-
-            <Label Content="Wielomian pierwotny" Margin="0, 60, 0, 0"></Label>
-            <ComboBox x:Name="SecondLfsrPolynomial" HorizontalAlignment="Left" Height="23" Margin="0, 80, 0, 0" VerticalAlignment="Top" Width="120"/>
-
-<!--            <Label Content="Stan początkowy rejestru: " Margin="0, 100, 0, 0"></Label>-->
-<!--            <TextBox x:Name="b" HorizontalAlignment="Left" Height="23" Margin="0, 120, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>-->
-        </Grid>
-
-<!--        LFSR 3 Grid-->
-        <Grid HorizontalAlignment="Right" Margin="0,80,0,40" VerticalAlignment="Top">
-            <Label FontSize="16" Content="LFSR 3" />
-            <Label Content="Stan początkowy rejestru: " Margin="0, 20, 0, 0"></Label>
-            <TextBox x:Name="ThirdLfsrRegisterStart" HorizontalAlignment="Left" Height="23" Margin="0, 40, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="1"/>
-
-            <Label Content="Wielomian pierwotny" Margin="0, 60, 0, 0"></Label>
-            <ComboBox x:Name="ThirdLfsrPolynomial" HorizontalAlignment="Left" Height="23" Margin="0, 80, 0, 0" VerticalAlignment="Top" Width="120"/>
-
-<!--            <Label Content="Stan początkowy rejestru: " Margin="0, 100, 0, 0"></Label>-->
-<!--            <TextBox x:Name="c" HorizontalAlignment="Left" Height="23" Margin="0, 120, 0, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>-->
-        </Grid>
-
-<!--        Generator Grid-->
-        <Grid HorizontalAlignment="Center" Margin="0, 260, 0,0 " VerticalAlignment="Top">
-            <Label x:Name="BitsNumberLabel" Content="Ilosc bitów:" HorizontalAlignment="Left" Margin="40,0,0,0" />
-            <TextBox x:Name="BitsNumberTextBox" HorizontalAlignment="Left" Height="23" Margin="40,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <Button x:Name="GenerateButton" Content="Generuj losowy ciąg" HorizontalAlignment="Left" Margin="40,50,0,0" VerticalAlignment="Top" Width="120" Click="GenerateButton_Click"/>
-            <ProgressBar x:Name="ProgressBar" HorizontalAlignment="Left" Maximum="100" Height="20" Margin="40,80,0,0" VerticalAlignment="Top" Width="430"/>
-            <TextBox x:Name="OutputTextBox" HorizontalAlignment="Left" Height="156" Margin="40,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="430"/>
-            <Button x:Name="SaveToFileButton" Content="Zapisz do pliku" HorizontalAlignment="Right" Margin="0,280,10,0" VerticalAlignment="Top" Width="120" Click="SaveToFileButton_Click"/>
-            <Button x:Name="SaveConfigurationButton" Content="Zapisz ustawienia do pliku" HorizontalAlignment="Right" Margin="0,280,135,0" VerticalAlignment="Top" Width="161" Click="SaveConfigurationButton_OnClick"/>
-            <Button x:Name="ReadConfigurationButton" Content="Odczytaj ustawienia" HorizontalAlignment="Right" Margin="0,280,301,0" VerticalAlignment="Top" Width="129" Click="ReadConfigurationButton_OnClick"/>
-        </Grid>
-
-
-    </Grid>
+    </ScrollViewer>
 </Page>
