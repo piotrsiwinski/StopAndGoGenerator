@@ -39,5 +39,10 @@ namespace StopAndGoGenerator.UI.Views
         {
             NavigationService.Navigate(new DecryptionPage());
         }
+
+        private void TestsButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new TestPage());
+        }
     }
 }

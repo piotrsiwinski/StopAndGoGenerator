@@ -15,6 +15,7 @@
         <Button x:Name="GeneratorButton" FontSize="16" Content="Generator" Margin="80,80,27,0" VerticalAlignment="Top" Click="GeneratorButton_OnClick" Height="100"/>
         <Button x:Name="Szyfrator" FontSize="16"  Content="Szyfrator" Margin="80,185,27,0" VerticalAlignment="Top" Click="Szyfrator_Click" Height="100"/>
         <Button x:Name="Deszyfrator" FontSize="16" Content="Deszyfrator" Margin="80,290,27,0" VerticalAlignment="Top" Click="Deszyfrator_Click" Height="100"/>
+        <Button x:Name="TestsButton" FontSize="16" Content="Testy" Margin="80,395,27,0" VerticalAlignment="Top" Click="TestsButton_OnClick" Height="100" RenderTransformOrigin="0.46,1.538"/>
 
     </Grid>
 </Page>
