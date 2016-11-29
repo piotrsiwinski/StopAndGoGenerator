@@ -56,6 +56,10 @@ namespace StopAndGoGenerator.UI.Views
             var result = _dictionary[selected](KeyTextBox.Text);
             OutputTextBox.Text = result.ToString();
         }
+        catch (IndexOutOfRangeException)
+        {
+            MessageBox.Show("W tescie poker liczba bitów musi być podzielna przez 4");
+        }
         catch (Exception)
         {
 
